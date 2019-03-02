@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="kr.co.allmoney" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>AllMoney_PhoneGap</name>
+    <name>얼마니?</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        얼마니? 모든 수수료 계산기
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="jpion.com@gmail.com" href="https://allmoney.co.kr">
+        MH
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
