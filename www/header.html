@@ -1,5 +1,9 @@
+<!-- 페이지 별 사항 --> <!-- 임포트 파일 -->
+<script type="text/javascript" src="js/header.js"></script>
+<!-- 메뉴 영역 -->
 <div id="menu" class="background-white">
-    <ul class="font-middle font-blue menu-list">
+    <!-- 계산기 메뉴 리스트 -->
+    <ul id="menu_list" class="font-middle font-blue menu-list">
         <li><a href="index.html" class="font-blue">부동산 중개수수료 계산기</li></a>
         <li>comming soon</li>
         <ul>
@@ -7,4 +11,30 @@
             <li>변호사 소송수수료 계산기</li>
         </ul>
     </ul>
+    <!-- 수집하는 정보에 관하여 버튼 -->
+    <section>
+        <input type="button" id="btn-collect" class="font-middle font-white background-blue bottom-btn"
+            value="수집하는 정보에 관하여">
+    </section>
+    <!-- 수집하는 정보에 관하여 내용 -->
+    <ul id="collect-info" class="font-middle font-blue menu-list list_none">
+        <li class="font-large font-black">수집하는 정보에 관하여</li>
+        <li>이 서비스는 사용자에게 다음의 정보를 익명으로 수집합니다. <span class="font-small">(익명: 수집된 정보가 누구로부터 발생했는지 알 수 없음)</span></li>
+        <br>
+        <ul class="list_number">
+            <li>계산된 거래 종류</li>
+            <li>계산된 거래 금액</li>
+            <li>PC/MOBILE 접속 구분</li>
+            <li>아이피 주소</li>
+            <li>위도/경도 위치 정보</li>
+        </ul>
+        <br>
+        <li>위 정보는 공공의 데이터로 사용될 계획입니다. 의미있는 규모의 데이터가 쌓이면 별도의 데이터센터를 만들어 모두와 공유하겠습니다. 우리가 함께 만드는 데이터는 특정 지역에 몰리는 창업 현상을 전국으로 분산하는 효과를 보일 것입니다. 통계를 통해 수요자에게 합당한 거래가를 안내하여 서로에게 득이 되는 거래를 유도할 수 있습니다. 여러분의 사용이 나와 우리의 문제를 해결합니다.</li>
+        <br>
+        <li>마케팅, 기획, 디자인, 개발 등 프로젝트에 함께할 능력자는 언제나 환영입니다!</li>
+    </ul>
+    <!-- 계산기 선택 버튼 -->
+    <section>
+        <input type="button" id="btn-calculator" class="font-middle font-white background-blue bottom-btn" value="계산기 선택">
+    </section>
 </div>
