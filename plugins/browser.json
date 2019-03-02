@@ -1,0 +1,73 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "kr.co.allmoney"
+        }
+    }
+}

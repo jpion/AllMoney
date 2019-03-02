@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 사항 -->
+    <meta charset="UTF-8">    
+    <!-- 공통 사항 --> <!-- 모바일웹 확대/축소 방지 : user-scalable=no -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- SEO -->
+    <link rel="canonical" href="https://allmoney.co.kr">
+    <META name="Subject" content="부동산 중개수수료 계산기">
+    <META name="Title" content="얼마니&#63; 부동산 중개수수료 계산기">
+    <META name="Description" content="공인중개사 수수료를 계산하여 이사 예산을 계획하세요.">
+    <META name="Keywords" content="부동산, 부동산중개, 중개업, 공인중개사, 보수, 공인중개사보수, 중개보수, 부동산중개보수, 복비, 수수료, 중개수수료, 부동산수수료, 계산기, 부동산계산기, 부동산중개수수료계산기, 수수료계산기, 복비계산기, 중개수수료계산기, 중개계산기, 복덕방, 복덕방수수료, 부동산중개수수료, 공인중개사수수료, 부동산복비, 복덕방복비, 매매, 전세, 임대, 원룸, 오피스텔, 사무실, 상가, 점포, 건물, 토지, 주거, 빌라, 아파트, 단독, 주택, 단독주택, 이사, 이사비용, 자취, 직방, 다방, 네이버부동산, 피터팬">
+    <META name="Author" content="MH">
+    <META name="Publisher" content="MH">
+    <META name="Other Agent" content="MH">
+    <META name="Location" content="KR">
+    <META name="Distribution" content="MH">
+    <META name="Copyright" content="MH">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="얼마니&#63; 부동산 중개수수료 계산기">
+    <meta property="og:description" content="공인중개사 수수료를 계산하여 이사 예산을 계획하세요.">
+    <meta property="og:image" content="https://allmoney.co.kr/img/share.jpg">
+    <meta property="og:url" content="https://allmoney.co.kr">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="얼마니&#63; 부동산 중개수수료 계산기">
+    <meta name="twitter:description" content="공인중개사 수수료를 계산하여 이사 예산을 계획하세요.">
+    <meta name="twitter:image" content="https://allmoney.co.kr/img/share.jpg">
+    <meta name="twitter:domain" content="https://allmoney.co.kr">
+    <!-- 공통 사항 --> <!-- IP 주소 확인 : jsgetip.appspot.com -->
+    <script type="text/javascript" src="http://jsgetip.appspot.com"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!-- 메뉴 별 사항 -->
+    <title>얼마니&#63; 부동산 중개수수료 계산기</title>
+    <!-- 메뉴 별 사항 --> <!-- 임포트 파일 -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/realtor.js"></script>
+</head>
+<body>
+<!-- 헤더 섹션 -->
+<section id="header"></section>
+<!-- 타이틀 섹션 -->
+<section id="top_section">
+    <img id="btn_menu_open" src="img/btn_menu_open.jpg">
+    <img id="btn_menu_close" src="img/btn_menu_close.jpg">
+    <p id="title" class="font-large font-white">부동산 중개수수료 계산기</p>
+</section>
+<!-- 위치 설정을 위한 섹션 -->
+<section class="start_point">&nbsp;</section>
+<!-- 항목 선택 섹션 -->
+<section id="choice_1_section" class="subMenu-section">
+    <input type="button" id="forever" class="font-middle font-blue background-white subMenu-result-btn" value="매매">
+    <input type="button" id="year" class="font-middle font-blue background-white subMenu-result-btn" value="전세">
+    <input type="button" id="month" class="font-middle font-blue background-white subMenu-result-btn" value="월세">
+    <p id="information" class="font-middle font-white">항목을 선택하면 계산이 시작됩니다</p>
+</section>
+<!-- 유형 선택 섹션 -->
+<section id="choice_2_section" class="subMenu-section">
+<p class="font-large font-white">유형을 선택하세요</p>
+    <input type="button" id="house" class="font-middle font-blue background-white subMenu-result-btn" value="주택 / 아파트 / 빌라">
+    <input type="button" id="work" class="font-middle font-blue background-white subMenu-result-btn" value="토지 / 상가 / 업무용오피스텔">
+    <input type="button" id="officetel" class="font-middle font-blue background-white subMenu-result-btn" value="주거용오피스텔">
+    <p id="officetel_comment" class="font-small font-white description-text">
+        주거용오피스텔이란?<br>전용면적 85m<sup>2</sup> 이하, 상하수도, 입식부엌, 전용수세식화장실, 목욕시설을 갖춘 오피스텔을 말합니다.
+    </p>
+</section>
+<!-- 1. 주거 매매 계산 섹션 -->
+<section id="house_forever_calcuator" class="subMenu-section">
+    <p class="font-large font-white">매매 거래금을 입력하세요</p>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="house_forever_money" class="font-large font-black input-box" placeholder="거래금">
+        <label for="house_forever_money" class="font-large font-white">만원</label>
+    </span>
+    <input type="button" id="house_forever_process" class="font-middle font-black background-white subMenu-result-btn" value="계산하기">
+    <div class="result">
+        <p>
+            <span class="font-large font-white result-text">수수료</span>
+            <span id="house_forever_result_fee" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">부가세</span>
+            <span id="house_forever_result_vat" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">합계</span>
+            <span id="house_forever_result_total" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p class="font-small font-white description-text">
+        계산된 금액은 천원 단위가 반올림되어 일부 차이가 있을 수 있습니다.<br>
+        이 계산은 법으로 정해진 최대 수수료율이 적용된 것임을 알려드립니다.
+    </p>
+    </div>
+    <input type="button" id="house_forever_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
+    <p id="house_forever_info" class="info-calculator">
+        <span class="font-large font-white">매매 주택/아파트/빌라</span><br>
+        <span class="font-middle font-white">
+            ■ 5천만원 미만 0.6%<br>
+            -> 한도액 25만원<br>
+            ■ 5천만원~2억원 미만 0.5%<br>
+            -> 한도액 80만원<br>
+            ■ 2억원~6억원 미만 0.4%<br>
+            -> 한도액 없음<br>
+            ■ 6억원~9억원 미만 0.5%<br>
+            -> 한도액 없음<br>
+            ■ 9억원 이상 0.9%<br>
+            -> 한도액 없음
+        </span>
+    </p>
+</section>
+<!-- 2. 주거 전세 계산 섹션 -->
+<section id="house_year_calcuator" class="subMenu-section">
+    <p class="font-large font-white">전세 보증금을 입력하세요</p>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="house_year_money" class="font-large font-black input-box" placeholder="보증금">
+        <label for="house_year_money" class="font-large font-white">만원</label>
+    </span>
+    <input type="button" id="house_year_process" class="font-middle font-black background-white subMenu-result-btn" value="계산하기">
+    <div class="result">
+        <p>
+            <span class="font-large font-white result-text">수수료</span>
+            <span id="house_year_result_fee" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">부가세</span>
+            <span id="house_year_result_vat" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">합계</span>
+            <span id="house_year_result_total" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p class="font-small font-white description-text">
+        계산된 금액은 천원 단위가 반올림되어 일부 차이가 있을 수 있습니다.<br>
+        이 계산은 법으로 정해진 최대 수수료율이 적용된 것임을 알려드립니다.
+    </p>
+    </div>
+    <input type="button" id="house_year_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
+    <p id="house_year_info" class="info-calculator">
+        <span class="font-large font-white">전세 주택/아파트/빌라</span><br>
+        <span class="font-middle font-white">
+            ■ 5천만원 미만 0.5%<br>
+            -> 한도액 20만원<br>
+            ■ 5천만원~1억원 미만 0.4%<br>
+            -> 한도액 30만원<br>
+            ■ 1억원~3억원 미만 0.3%<br>
+            -> 한도액 없음<br>
+            ■ 3억원 이상 0.8%<br>
+            -> 한도액 없음
+        </span>
+    </p>
+</section>
+<!-- 3. 주거 월세 계산 섹션 -->
+<section id="house_month_calcuator" class="subMenu-section">
+    <p class="font-large font-white">보증금과 월세를 입력하세요</p>
+    <!-- 월세 입력 추가 id="house_month_rent_money" -->
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="house_month_money" class="font-large font-black input-box" placeholder="보증금">
+        <label for="house_month_money" class="font-large font-white">만원</label>
+    </span>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="house_month_rent_money" class="font-large font-black input-box" placeholder="월세">
+        <label for="house_month_rent_money" class="font-large font-white">만원</label>
+    </span>
+    <input type="button" id="house_month_process" class="font-middle font-black background-white subMenu-result-btn" value="계산하기">
+    <div class="result">
+        <p>
+            <span class="font-large font-white result-text">수수료</span>
+            <span id="house_month_result_fee" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">부가세</span>
+            <span id="house_month_result_vat" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">합계</span>
+            <span id="house_month_result_total" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p class="font-small font-white description-text">
+        계산된 금액은 천원 단위가 반올림되어 일부 차이가 있을 수 있습니다.<br>
+        이 계산은 법으로 정해진 최대 수수료율이 적용된 것임을 알려드립니다.
+    </p>
+    </div>
+    <input type="button" id="house_month_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
+    <p id="house_month_info" class="info-calculator">
+        <span class="font-large font-white">월세 주택/아파트/빌라</span><br>
+        <span class="font-middle font-white">
+            = 보증금 + (월세 * 100)<br>
+            ■ 5천만원 미만 0.5%<br>
+            -> 한도액 20만원<br>
+            ■ 5천만원~1억원 미만 0.4%<br>
+            -> 한도액 30만원<br>
+            ■ 1억원~3억원 미만 0.3%<br>
+            -> 한도액 없음<br>
+            ■ 3억원~6억원 미만 0.4%<br>
+            -> 한도액 없음<br>
+            ■ 6억원 이상 0.8%<br>
+            -> 한도액 없음
+        </span>
+    </p>
+</section>
+<!-- 4. 상가 매매 계산 섹션 -->
+<section id="work_forever_calcuator" class="subMenu-section">
+    <p class="font-large font-white">매매 거래금을 입력하세요</p>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="work_forever_money" class="font-large font-black input-box" placeholder="거래금">
+        <label for="work_forever_money" class="font-large font-white">만원</label>
+    </span>
+    <input type="button" id="work_forever_process" class="font-middle font-black background-white subMenu-result-btn" value="계산하기">
+    <div class="result">
+        <p>
+            <span class="font-large font-white result-text">수수료</span>
+            <span id="work_forever_result_fee" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">부가세</span>
+            <span id="work_forever_result_vat" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">합계</span>
+            <span id="work_forever_result_total" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p class="font-small font-white description-text">
+        계산된 금액은 천원 단위가 반올림되어 일부 차이가 있을 수 있습니다.<br>
+        이 계산은 법으로 정해진 최대 수수료율이 적용된 것임을 알려드립니다.
+    </p>
+    </div>
+    <input type="button" id="work_forever_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
+    <p id="work_forever_info" class="info-calculator">
+        <span class="font-large font-white">
+            토지/상가/업무용오피스텔<br>
+            ■ 매매 9%<br>
+            ■ 전세 9%<br>
+            ■ 월세 9%<br>
+            <span class="font-middle">
+                월세거래금={보증금+(월세*100or70)}
+            </span>
+        </span>
+    </p>
+</section>
+<!-- 5. 상가 전세 계산 섹션 -->
+<section id="work_year_calcuator" class="subMenu-section">
+    <p class="font-large font-white">전세 보증금을 입력하세요</p>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="work_year_money" class="font-large font-black input-box" placeholder="보증금">
+        <label fot="" class="font-large font-white">만원</label>
+    </span>
+    <input type="button" id="work_year_process" class="font-middle font-black background-white subMenu-result-btn" value="계산하기">
+    <div class="result">
+        <p>
+            <span class="font-large font-white result-text">수수료</span>
+            <span id="work_year_result_fee" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">부가세</span>
+            <span id="work_year_result_vat" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">합계</span>
+            <span id="work_year_result_total" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p class="font-small font-white description-text">
+        계산된 금액은 천원 단위가 반올림되어 일부 차이가 있을 수 있습니다.<br>
+        이 계산은 법으로 정해진 최대 수수료율이 적용된 것임을 알려드립니다.
+    </p>
+    </div>
+    <input type="button" id="work_year_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
+    <p id="work_year_info" class="info-calculator">
+        <span class="font-large font-white">
+            토지/상가/업무용오피스텔<br>
+            ■ 매매 9%<br>
+            ■ 전세 9%<br>
+            ■ 월세 9%<br>
+            <span class="font-middle">
+                월세거래금={보증금+(월세*100or70)}
+            </span>
+        </span>
+    </p>
+</section>
+<!-- 6. 상가 월세 계산 섹션 -->
+<section id="work_month_calcuator" class="subMenu-section">
+    <p class="font-large font-white">보증금과 월세를 입력하세요</p>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="work_month_money" class="font-large font-black input-box" placeholder="보증금">
+        <label for="" class="font-large font-white">만원</label>
+    </span>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="work_month_rent_money" class="font-large font-black input-box" placeholder="월세">
+        <label for="house_month_rent_money" class="font-large font-white">만원</label>
+    </span>
+    <input type="button" id="work_month_process" class="font-middle font-black background-white subMenu-result-btn" value="계산하기">
+    <div class="result">
+        <p>
+            <span class="font-large font-white result-text">수수료</span>
+            <span id="work_month_result_fee" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">부가세</span>
+            <span id="work_month_result_vat" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">합계</span>
+            <span id="work_month_result_total" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p class="font-small font-white description-text">
+        계산된 금액은 천원 단위가 반올림되어 일부 차이가 있을 수 있습니다.<br>
+        이 계산은 법으로 정해진 최대 수수료율이 적용된 것임을 알려드립니다.
+    </p>
+    </div>
+    <input type="button" id="work_month_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
+    <p id="work_month_info" class="info-calculator">
+        <span class="font-large font-white">
+            토지/상가/업무용오피스텔<br>
+            ■ 매매 9%<br>
+            ■ 전세 9%<br>
+            ■ 월세 9%<br>
+            <span class="font-middle">
+                월세거래금={보증금+(월세*100or70)}
+            </span>
+        </span>
+    </p>
+</section>
+<!-- 7. 주거용오피스텔 매매 계산 섹션 -->
+<section id="officetel_forever_calcuator" class="subMenu-section">
+    <p class="font-large font-white">매매 거래금을 입력하세요</p>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="officetel_forever_money" class="font-large font-black input-box" placeholder="거래금">
+        <label for="officetel_forever_money" class="font-large font-white">만원</label>
+    </span>
+    <input type="button" id="officetel_forever_process" class="font-middle font-black background-white subMenu-result-btn" value="계산하기">
+    <div class="result">
+        <p>
+            <span class="font-large font-white result-text">수수료</span>
+            <span id="officetel_forever_result_fee" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">부가세</span>
+            <span id="officetel_forever_result_vat" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">합계</span>
+            <span id="officetel_forever_result_total" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p class="font-small font-white description-text">
+        계산된 금액은 천원 단위가 반올림되어 일부 차이가 있을 수 있습니다.<br>
+        이 계산은 법으로 정해진 최대 수수료율이 적용된 것임을 알려드립니다.
+    </p>
+    </div>
+    <input type="button" id="officetel_forever_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
+    <p id="officetel_forever_info" class="info-calculator">
+        <span class="font-large font-white">
+            주거용오피스텔<br>
+            ■ 매매 5%<br>
+            ■ 전세 4%<br>
+            ■ 월세 4%<br>
+            <span class="font-middle">
+                월세거래금={보증금+(월세*100or70)}
+            </span>
+        </span>
+    </p>
+</section>
+<!-- 8. 주거용오피스텔 전세 계산 섹션 -->
+<section id="officetel_year_calcuator" class="subMenu-section">
+    <p class="font-large font-white">전세 보증금을 입력하세요</p>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="officetel_year_money" class="font-large font-black input-box" placeholder="보증금">
+        <label for="officetel_year_money" class="font-large font-white">만원</label>
+    </span>
+    <input type="button" id="officetel_year_process" class="font-middle font-black background-white subMenu-result-btn" value="계산하기">
+    <div class="result">
+        <p>
+            <span class="font-large font-white result-text">수수료</span>
+            <span id="officetel_year_result_fee" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">부가세</span>
+            <span id="officetel_year_result_vat" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">합계</span>
+            <span id="officetel_year_result_total" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p class="font-small font-white description-text">
+        계산된 금액은 천원 단위가 반올림되어 일부 차이가 있을 수 있습니다.<br>
+        이 계산은 법으로 정해진 최대 수수료율이 적용된 것임을 알려드립니다.
+    </p>
+    </div>
+    <input type="button" id="officetel_year_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
+    <p id="officetel_year_info" class="info-calculator">
+        <span class="font-large font-white">
+            주거용오피스텔<br>
+            ■ 매매 5%<br>
+            ■ 전세 4%<br>
+            ■ 월세 4%<br>
+            <span class="font-middle">
+                월세거래금={보증금+(월세*100or70)}
+            </span>
+        </span>
+    </p>
+</section>
+<!-- 9. 주거용오피스텔 월세 계산 섹션 -->
+<section id="officetel_month_calcuator" class="subMenu-section">
+    <p class="font-large font-white">보증금과 월세를 입력하세요</p>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="officetel_month_money" class="font-large font-black input-box" placeholder="보증금">
+        <label for="" class="font-large font-white">만원</label>
+    </span>
+    <span class="input-area">
+        <input type="number" pattern="\d*" id="officetel_month_rent_money" class="font-large font-black input-box" placeholder="월세">
+        <label for="house_month_rent_money" class="font-large font-white">만원</label>
+    </span>
+    <input type="button" id="officetel_month_process" class="font-middle font-black background-white subMenu-result-btn" value="계산하기">
+    <div class="result">
+        <p>
+            <span class="font-large font-white result-text">수수료</span>
+            <span id="officetel_month_result_fee" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">부가세</span>
+            <span id="officetel_month_result_vat" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p>
+            <span class="font-large font-white result-text">합계</span>
+            <span id="officetel_month_result_total" class="font-large font-white result-num">0만원</span>
+        </p>
+        <p class="font-small font-white description-text">
+        계산된 금액은 천원 단위가 반올림되어 일부 차이가 있을 수 있습니다.<br>
+        이 계산은 법으로 정해진 최대 수수료율이 적용된 것임을 알려드립니다.
+    </p>
+    </div>
+    <input type="button" id="officetel_month_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
+    <p id="officetel_month_info" class="info-calculator">
+        <span class="font-large font-white">
+            주거용오피스텔<br>
+            ■ 매매 5%<br>
+            ■ 전세 4%<br>
+            ■ 월세 4%<br>
+            <span class="font-middle">
+                월세거래금={보증금+(월세*100or70)}
+            </span>
+        </span>
+    </p>
+</section>
+<!-- 계산기 초기화 버튼 -->
+<section id="bottom_section">
+    <input type="button" class="font-middle font-blue background-white reset-btn" value="다시 시작" onClick="location.replace('index.html')">
+</section>
+<!-- 푸터 섹션 -->
+<section id="footer"></section>

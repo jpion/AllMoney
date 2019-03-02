@@ -1,0 +1,48 @@
+/* do-hyeon-regular - korean */
+@font-face {
+    font-family: 'Do Hyeon';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/do-hyeon-v8-korean-regular.eot'); /* IE9 Compat Modes */
+    src: local('Do Hyeon Regular'), local('DoHyeon-Regular'),
+         url('../fonts/do-hyeon-v8-korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/do-hyeon-v8-korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/do-hyeon-v8-korean-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/do-hyeon-v8-korean-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/do-hyeon-v8-korean-regular.svg#DoHyeon') format('svg'); /* Legacy iOS */
+  }  
+.font-large { font-size: 28px; }
+.font-middle { font-size: 20px; }
+.font-small { font-size: 12px; }
+.font-white { color: #F9FCFE; }
+.font-blue { color: #2B9AEC; }
+.font-black { color: #000000; }
+.background-white { background-color: #F9FCFE; }
+.background-blue { background-color: #2B9AEC; }
+
+body { width: 100%; margin: auto; background-color: #2B9AEC; font-family: 'Do Hyeon'; }
+input { -webkit-appearance: none; border-radius: 0; }
+input::placeholder { color: rgb(180, 180, 180); }
+textarea::placeholder { color: rgb(180, 180, 180); }
+
+#top_section { clear: both; width: 100%; height: 55px; position: fixed; top: 0; background-color: #2B9AEC; z-index: 10; }
+#btn_menu_open { display: block; float: left; cursor: pointer; }
+#btn_menu_close { display: none; float: left; cursor: pointer; }
+#menu { display: none; position: fixed; width: 100%; height: 100%; z-index: 10; }
+#menu a { text-decoration: none; }
+#title { width: 100%; text-align: center; display: block; margin-top: 19px; }
+#tail { clear: both; text-align: center; margin: 50px 0px 100px 0px; }
+#tail_line { border: 1px #F9FCFE solid; width: 200px; margin: auto; }
+
+.menu-list { line-height: 40px; }
+.start_point { margin-top: 55px; }
+.subMenu-section { clear: both; text-align: center; }
+.input-area { clear: both; display: block; }
+.input-box { clear: both; width: 232px; height: 55px; text-align: right; border: none; padding: 0px 10px; margin: auto; margin-bottom: 10px; }
+.subMenu-result-btn { clear: both; display: block; width: 300px; height: 55px; margin: auto; border: none; margin-bottom: 10px; cursor: pointer; }
+.description-text { clear: both; width: 300px; margin: auto; margin-bottom: 30px; text-align: justify; }
+.result { clear: both; width: 300px; margin: auto; }
+.result-text { clear: both; float: left; }
+.result-num { float: right; }
+.reset-btn { clear: both; display: block; position: fixed; bottom: 0; width: 100%; height: 55px; border: none; cursor: pointer; }
+.info-calculator { width: 300px; margin: auto; text-align: justify; display: none; }
