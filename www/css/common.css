@@ -20,7 +20,7 @@
 .background-white { background-color: #F9FCFE; }
 .background-blue { background-color: #2B9AEC; }
 
-body { width: 100%; margin: auto; background-color: #2B9AEC; font-family: 'Do Hyeon'; }
+body { width: 100%; margin: auto; background-color: #2B9AEC; font-family: 'Do Hyeon'; padding-top: constant(safe-area-inset-top); /* iOS 11.0 */ padding-top: env(safe-area-inset-top); /* iOS 11.2 */ }
 input { -webkit-appearance: none; border-radius: 0; }
 input::placeholder { color: rgb(180, 180, 180); }
 textarea::placeholder { color: rgb(180, 180, 180); }
@@ -46,7 +46,7 @@ textarea::placeholder { color: rgb(180, 180, 180); }
 .result { clear: both; width: 300px; margin: auto; }
 .result-text { clear: both; float: left; }
 .result-num { float: right; }
-.bottom-btn { clear: both; display: block; position: fixed; bottom: 0; width: 100%; height: 55px; border: none; cursor: pointer; }
+.bottom-btn { clear: both; display: block; position: fixed; bottom: 0; width: 100%; height: 55px; border: none; cursor: pointer; margin-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */ margin-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */ }
 .info-calculator { width: 300px; margin: auto; text-align: justify; display: none; }
 .list_none { list-style: none; }
 .list_number { list-style: decimal; }
