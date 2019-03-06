@@ -98,16 +98,19 @@ $(document).ready(function () {
     $('#house_forever_money').blur(function(){
         $('#bottom_section').show();
     });
-    // 1. 엔터키 이벤트
-    $('#house_forever_money').keyup(function(key){
-        if(key.keyCode == 13){
+    // 1. 키보드 제어
+    $('#house_forever_money').keydown(function (key) {
+        console.log(key.which);
+        if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
+            $(this).keyup(function () {
+                var temp = $(this).val().replace(/\,/g, '');
+                $(this).val(Number(temp).toLocaleString());
+            });
+        } else if (key.keyCode === 13) { // 엔터키 이벤트
             $('#house_forever_process').click();
+        } else { // 그외 외 키 입력 무시
+            return key.returnValue = false;
         }
-    });
-    // 1. input 값 자리수 구분 표시
-    $('#house_forever_money').keyup(function(){
-        var temp = $('#house_forever_money').val().replace(/\,/g,'');
-        $('#house_forever_money').val(Number(temp).toLocaleString());
     });
     // 1. 주거 매매 계산기
     $('#house_forever_process').click(function () {
@@ -208,16 +211,18 @@ $(document).ready(function () {
     $('#house_year_money').blur(function(){
         $('#bottom_section').show();
     });
-    // 2. 엔터키 이벤트
-    $('#house_year_money').keyup(function(key){
-        if(key.keyCode == 13){
+    // 2. 키보드 제어
+    $('#house_year_money').keydown(function (key) {
+        if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
+            $(this).keyup(function () {
+                var temp = $(this).val().replace(/\,/g, '');
+                $(this).val(Number(temp).toLocaleString());
+            });
+        } else if (key.keyCode === 13) { // 엔터키 이벤트
             $('#house_year_process').click();
+        } else { // 그외 외 키 입력 무시
+            return key.returnValue = false;
         }
-    });
-    // 2. input 값 자리수 구분 표시
-    $('#house_year_money').keyup(function(){
-        var temp = $('#house_year_money').val().replace(/\,/g,'');
-        $('#house_year_money').val(Number(temp).toLocaleString());
     });
     // 2. 주거 전세 계산기
     $('#house_year_process').click(function () {
@@ -310,20 +315,19 @@ $(document).ready(function () {
     $('#house_month_money, #house_month_rent_money').blur(function(){
         $('#bottom_section').show();
     });
-    // 3. 엔터키 이벤트
-    $('#house_month_money, #house_month_rent_money').keyup(function(key){
-        if(key.keyCode == 13){
+    // 3. 키보드 제어
+    $('#house_month_money, #house_month_rent_money').keydown(function (key) {
+        console.log(key.which);
+        if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
+            $(this).keyup(function () {
+                var temp = $(this).val().replace(/\,/g, '');
+                $(this).val(Number(temp).toLocaleString());
+            });
+        } else if (key.keyCode === 13) { // 엔터키 이벤트
             $('#house_month_process').click();
+        } else { // 그외 외 키 입력 무시
+            return key.returnValue = false;
         }
-    });
-    // 3. input 값 자리수 구분 표시
-    $('#house_month_money').keyup(function(){
-        var temp = $('#house_month_money').val().replace(/\,/g,'');
-        $('#house_month_money').val(Number(temp).toLocaleString());
-    });
-    $('#house_month_rent_money').keyup(function(){
-        var temp = $('#house_month_rent_money').val().replace(/\,/g,'');
-        $('#house_month_rent_money').val(Number(temp).toLocaleString());
     });
     // 3. 주거 월세 계산기
     // 거래금이 5천만원 미만일 때와 이상일 때의 계산 식이 다름
@@ -435,16 +439,19 @@ $(document).ready(function () {
     $('#work_forever_money').blur(function(){
         $('#bottom_section').show();
     });
-    // 4. 엔터키 이벤트
-    $('#work_forever_money').keyup(function(key){
-        if(key.keyCode == 13){
+    // 4. 키보드 제어
+    $('#work_forever_money').keydown(function (key) {
+        console.log(key.which);
+        if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
+            $(this).keyup(function () {
+                var temp = $(this).val().replace(/\,/g, '');
+                $(this).val(Number(temp).toLocaleString());
+            });
+        } else if (key.keyCode === 13) { // 엔터키 이벤트
             $('#work_forever_process').click();
+        } else { // 그외 외 키 입력 무시
+            return key.returnValue = false;
         }
-    });
-    // 4. input 값 자리수 구분 표시
-    $('#work_forever_money').keyup(function(){
-        var temp = $('#work_forever_money').val().replace(/\,/g,'');
-        $('#work_forever_money').val(Number(temp).toLocaleString());
     });
     // 4. 상가 매매 계산기
     // 매매 거래금의 0.9%
@@ -493,16 +500,19 @@ $(document).ready(function () {
     $('#work_year_money').blur(function(){
         $('#bottom_section').show();
     });
-    // 5. 엔터키 이벤트
-    $('#work_year_money').keyup(function(key){
-        if(key.keyCode == 13){
+    // 5. 키보드 제어
+    $('#work_year_money').keydown(function (key) {
+        console.log(key.which);
+        if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
+            $(this).keyup(function () {
+                var temp = $(this).val().replace(/\,/g, '');
+                $(this).val(Number(temp).toLocaleString());
+            });
+        } else if (key.keyCode === 13) { // 엔터키 이벤트
             $('#work_year_process').click();
+        } else { // 그외 외 키 입력 무시
+            return key.returnValue = false;
         }
-    });
-    // 5. input 값 자리수 구분 표시
-    $('#work_year_money').keyup(function(){
-        var temp = $('#work_year_money').val().replace(/\,/g,'');
-        $('#work_year_money').val(Number(temp).toLocaleString());
     });
     // 5. 상가 전세 계산기
     // 전세 보증금의 0.9%
@@ -551,20 +561,19 @@ $(document).ready(function () {
     $('#work_month_money, #work_month_rent_money').blur(function(){
         $('#bottom_section').show();
     });
-    // 6. 엔터키 이벤트
-    $('#work_month_money, #work_month_rent_money').keyup(function(key){
-        if(key.keyCode == 13){
+    // 6. 키보드 제어
+    $('#work_month_money, #work_month_rent_money').keydown(function (key) {
+        console.log(key.which);
+        if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
+            $(this).keyup(function () {
+                var temp = $(this).val().replace(/\,/g, '');
+                $(this).val(Number(temp).toLocaleString());
+            });
+        } else if (key.keyCode === 13) { // 엔터키 이벤트
             $('#work_month_process').click();
+        } else { // 그외 외 키 입력 무시
+            return key.returnValue = false;
         }
-    });
-    // 6. input 값 자리수 구분 표시
-    $('#work_month_money').keyup(function(){
-        var temp = $('#work_month_money').val().replace(/\,/g,'');
-        $('#work_month_money').val(Number(temp).toLocaleString());
-    });
-    $('#work_month_rent_money').keyup(function(){
-        var temp = $('#work_month_rent_money').val().replace(/\,/g,'');
-        $('#work_month_rent_money').val(Number(temp).toLocaleString());
     });
     // 6. 상가 월세 계산기
     // 거래금의 0.9%
@@ -624,16 +633,19 @@ $(document).ready(function () {
     $('#officetel_forever_money').blur(function(){
         $('#bottom_section').show();
     });
-    // 7. 엔터키 이벤트
-    $('#officetel_forever_money').keyup(function(key){
-        if(key.keyCode == 13){
+    // 7. 키보드 제어
+    $('#officetel_forever_money').keydown(function (key) {
+        console.log(key.which);
+        if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
+            $(this).keyup(function () {
+                var temp = $(this).val().replace(/\,/g, '');
+                $(this).val(Number(temp).toLocaleString());
+            });
+        } else if (key.keyCode === 13) { // 엔터키 이벤트
             $('#officetel_forever_process').click();
+        } else { // 그외 외 키 입력 무시
+            return key.returnValue = false;
         }
-    });
-    // 7. input 값 자리수 구분 표시
-    $('#officetel_forever_money').keyup(function(){
-        var temp = $('#officetel_forever_money').val().replace(/\,/g,'');
-        $('#officetel_forever_money').val(Number(temp).toLocaleString());
     });
     // 7. 주거용오피스텔 매매 계산기
     // 매매 거래금의 0.5%
@@ -682,16 +694,19 @@ $(document).ready(function () {
     $('#officetel_year_money').blur(function(){
         $('#bottom_section').show();
     });
-    // 8. 엔터키 이벤트
-    $('#officetel_year_money').keyup(function(key){
-        if(key.keyCode == 13){
+    // 8. 키보드 제어
+    $('#officetel_year_money').keydown(function (key) {
+        console.log(key.which);
+        if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
+            $(this).keyup(function () {
+                var temp = $(this).val().replace(/\,/g, '');
+                $(this).val(Number(temp).toLocaleString());
+            });
+        } else if (key.keyCode === 13) { // 엔터키 이벤트
             $('#officetel_year_process').click();
+        } else { // 그외 외 키 입력 무시
+            return key.returnValue = false;
         }
-    });
-    // 8. input 값 자리수 구분 표시
-    $('#officetel_year_money').keyup(function(){
-        var temp = $('#officetel_year_money').val().replace(/\,/g,'');
-        $('#officetel_year_money').val(Number(temp).toLocaleString());
     });
     // 8. 주거용오피스텔 전세 계산기
     // 전세 보증금의 0.4%
@@ -740,20 +755,19 @@ $(document).ready(function () {
     $('#officetel_month_money, #officetel_month_rent_money').blur(function(){
         $('#bottom_section').show();
     });
-    // 9. 엔터키 이벤트
-    $('#officetel_month_money, #officetel_month_rent_money').keyup(function(key){
-        if(key.keyCode == 13){
+    // 9. 키보드 제어
+    $('#officetel_month_money, #officetel_month_rent_money').keydown(function (key) {
+        console.log(key.which);
+        if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
+            $(this).keyup(function () {
+                var temp = $(this).val().replace(/\,/g, '');
+                $(this).val(Number(temp).toLocaleString());
+            });
+        } else if (key.keyCode === 13) { // 엔터키 이벤트
             $('#officetel_month_process').click();
+        } else { // 그외 외 키 입력 무시
+            return key.returnValue = false;
         }
-    });
-    // 9. input 값 자리수 구분 표시
-    $('#officetel_month_money').keyup(function(){
-        var temp = $('#officetel_month_money').val().replace(/\,/g,'');
-        $('#officetel_month_money').val(Number(temp).toLocaleString());
-    });
-    $('#officetel_month_rent_money').keyup(function(){
-        var temp = $('#officetel_month_rent_money').val().replace(/\,/g,'');
-        $('#officetel_month_rent_money').val(Number(temp).toLocaleString());
     });
     // 9. 주거용오피스텔 월세 계산기
     // 거래금의 0.4%

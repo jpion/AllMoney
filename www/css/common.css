@@ -50,3 +50,4 @@ textarea::placeholder { color: rgb(180, 180, 180); }
 .info-calculator { width: 300px; margin: auto; text-align: justify; display: none; }
 .list_none { list-style: none; }
 .list_number { list-style: decimal; }
+.store_icon { width: 50px; }
