@@ -10,12 +10,7 @@ var ip = ip();
 // 위도, 경도 확인
 var latitude = "";
 var longitude = "";
-if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-        latitude = position.coords.latitude;
-        longitude = position.coords.longitude;
-    });
-}
+
 // 메뉴 버튼 제어
 $(document).ready(function () {
     // 헤더 부분 연결
@@ -36,4 +31,10 @@ $(document).ready(function () {
         $('#menu_list, #btn-collect').show();
         $('#collect-info, #btn-calculator').hide();
     });
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+        });
+    }
 });
