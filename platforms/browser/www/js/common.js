@@ -10,12 +10,32 @@ var ip = ip();
 // 위도, 경도 확인
 var latitude = "";
 var longitude = "";
-if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-        latitude = position.coords.latitude;
-        longitude = position.coords.longitude;
-    });
+// if ("geolocation" in navigator) {
+//     navigator.geolocation.getCurrentPosition(function (position) {
+//         latitude = position.coords.latitude;
+//         longitude = position.coords.longitude;
+//     });
+// }
+
+$(function () {
+    console.log('1');
+    document.addEventListener("deviceready", onDeviceReady, false);
+});
+function onDeviceReady() {
+    console.log('2');
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
+function onSuccess(position) {
+    console.log('3');
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+}
+function onError(error) {
+    alert("위치 정보 실패");
+}
+
+
+
 // 메뉴 버튼 제어
 $(document).ready(function () {
     // 헤더 부분 연결
