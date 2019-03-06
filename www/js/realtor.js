@@ -100,7 +100,6 @@ $(document).ready(function () {
     });
     // 1. 키보드 제어
     $('#house_forever_money').keydown(function (key) {
-        console.log(key.which);
         if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
             $(this).keyup(function () {
                 var temp = $(this).val().replace(/\,/g, '');
@@ -120,7 +119,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({
-            url: 'https://allmoney.co.kr/php/realtor_insert.php',
+            url: realtor,
             type: 'POST',
             data: {
                 'item': '매매',
@@ -232,7 +231,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'https://allmoney.co.kr/php/realtor_insert.php',
+            url: realtor,
             type: 'POST',
             data: {
                 'item': '전세',
@@ -317,7 +316,6 @@ $(document).ready(function () {
     });
     // 3. 키보드 제어
     $('#house_month_money, #house_month_rent_money').keydown(function (key) {
-        console.log(key.which);
         if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
             $(this).keyup(function () {
                 var temp = $(this).val().replace(/\,/g, '');
@@ -348,7 +346,7 @@ $(document).ready(function () {
         }
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'https://allmoney.co.kr/php/realtor_insert.php',
+            url: realtor,
             type: 'POST',
             data: {
                 'item': '월세',
@@ -441,7 +439,6 @@ $(document).ready(function () {
     });
     // 4. 키보드 제어
     $('#work_forever_money').keydown(function (key) {
-        console.log(key.which);
         if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
             $(this).keyup(function () {
                 var temp = $(this).val().replace(/\,/g, '');
@@ -462,7 +459,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'https://allmoney.co.kr/php/realtor_insert.php',
+            url: realtor,
             type: 'POST',
             data: {
                 'item': '매매',
@@ -502,7 +499,6 @@ $(document).ready(function () {
     });
     // 5. 키보드 제어
     $('#work_year_money').keydown(function (key) {
-        console.log(key.which);
         if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
             $(this).keyup(function () {
                 var temp = $(this).val().replace(/\,/g, '');
@@ -523,7 +519,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'https://allmoney.co.kr/php/realtor_insert.php',
+            url: realtor,
             type: 'POST',
             data: {
                 'item': '전세',
@@ -563,7 +559,6 @@ $(document).ready(function () {
     });
     // 6. 키보드 제어
     $('#work_month_money, #work_month_rent_money').keydown(function (key) {
-        console.log(key.which);
         if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
             $(this).keyup(function () {
                 var temp = $(this).val().replace(/\,/g, '');
@@ -595,7 +590,7 @@ $(document).ready(function () {
         }
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'https://allmoney.co.kr/php/realtor_insert.php',
+            url: realtor,
             type: 'POST',
             data: {
                 'item': '월세',
@@ -635,7 +630,6 @@ $(document).ready(function () {
     });
     // 7. 키보드 제어
     $('#officetel_forever_money').keydown(function (key) {
-        console.log(key.which);
         if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
             $(this).keyup(function () {
                 var temp = $(this).val().replace(/\,/g, '');
@@ -656,7 +650,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'https://allmoney.co.kr/php/realtor_insert.php',
+            url: realtor,
             type: 'POST',
             data: {
                 'item': '매매',
@@ -696,7 +690,6 @@ $(document).ready(function () {
     });
     // 8. 키보드 제어
     $('#officetel_year_money').keydown(function (key) {
-        console.log(key.which);
         if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
             $(this).keyup(function () {
                 var temp = $(this).val().replace(/\,/g, '');
@@ -717,7 +710,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'https://allmoney.co.kr/php/realtor_insert.php',
+            url: realtor,
             type: 'POST',
             data: {
                 'item': '전세',
@@ -757,7 +750,6 @@ $(document).ready(function () {
     });
     // 9. 키보드 제어
     $('#officetel_month_money, #officetel_month_rent_money').keydown(function (key) {
-        console.log(key.which);
         if (key.keyCode >= 48 && key.keyCode <= 57 || key.keyCode === 8 || key.keyCode >= 35 && key.keyCode <= 40 || key.keyCode === 9 || key.keyCode === 46) { // 숫자/백스페이스/Home/End/방향/탭/델 키 입력 허용
             $(this).keyup(function () {
                 var temp = $(this).val().replace(/\,/g, '');
@@ -789,7 +781,7 @@ $(document).ready(function () {
         }
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'https://allmoney.co.kr/php/realtor_insert.php',
+            url: realtor,
             type: 'POST',
             data: {
                 'item': '월세',
