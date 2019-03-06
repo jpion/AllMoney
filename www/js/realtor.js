@@ -117,7 +117,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({
-            url: 'php/realtor_insert.php',
+            url: 'https://allmoney.co.kr/php/realtor_insert.php',
             type: 'POST',
             data: {
                 'item': '매매',
@@ -227,7 +227,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'php/realtor_insert.php',
+            url: 'https://allmoney.co.kr/php/realtor_insert.php',
             type: 'POST',
             data: {
                 'item': '전세',
@@ -344,7 +344,7 @@ $(document).ready(function () {
         }
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'php/realtor_insert.php',
+            url: 'https://allmoney.co.kr/php/realtor_insert.php',
             type: 'POST',
             data: {
                 'item': '월세',
@@ -455,7 +455,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'php/realtor_insert.php',
+            url: 'https://allmoney.co.kr/php/realtor_insert.php',
             type: 'POST',
             data: {
                 'item': '매매',
@@ -513,7 +513,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'php/realtor_insert.php',
+            url: 'https://allmoney.co.kr/php/realtor_insert.php',
             type: 'POST',
             data: {
                 'item': '전세',
@@ -586,7 +586,7 @@ $(document).ready(function () {
         }
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'php/realtor_insert.php',
+            url: 'https://allmoney.co.kr/php/realtor_insert.php',
             type: 'POST',
             data: {
                 'item': '월세',
@@ -644,7 +644,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'php/realtor_insert.php',
+            url: 'https://allmoney.co.kr/php/realtor_insert.php',
             type: 'POST',
             data: {
                 'item': '매매',
@@ -702,7 +702,7 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'php/realtor_insert.php',
+            url: 'https://allmoney.co.kr/php/realtor_insert.php',
             type: 'POST',
             data: {
                 'item': '전세',
@@ -775,7 +775,7 @@ $(document).ready(function () {
         }
         // 입력된 값 DB 전송
         $.ajax({            
-            url: 'php/realtor_insert.php',
+            url: 'https://allmoney.co.kr/php/realtor_insert.php',
             type: 'POST',
             data: {
                 'item': '월세',
