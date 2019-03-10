@@ -6,7 +6,7 @@ if (navigator.userAgent.match(/Android|Mobile|iP(hone|od|ad)|BlackBerry|IEMobile
     device = 'PC';
 }
 // IP 주소 확인
-var ip = ip();
+// var ip = ip();
 // 위도, 경도 확인
 var latitude = "";
 var longitude = "";
