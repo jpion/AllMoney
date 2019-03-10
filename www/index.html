@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- 구글 애널리틱스 -->
+    <!-- 공통 사항 --> <!-- 구글 애널리틱스 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135471869-1"></script>
     <script>
@@ -10,12 +10,20 @@
         gtag('js', new Date());
         gtag('config', 'UA-135471869-1');
     </script>
-    <!-- 공통 사항 -->
+    <!-- 공통 사항 --> <!-- 인코딩 설정 -->
     <meta charset="UTF-8">    
     <!-- 공통 사항 --> <!-- 모바일웹 확대/축소 방지 : user-scalable=no, 아이폰X 뷰포트 맞춤 : viewport-fit=cover -->
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- SEO -->
+    <!-- 공통 사항 --> <!-- IP 주소 확인 : jsgetip.appspot.com -->
+    <script type="text/javascript" src="https://jsgetip.appspot.com"></script>
+    <script src="js/plugin/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!-- 공통 사항  --> <!-- 파비콘 -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="icon" href="img/favicon.ico">
+    <!-- 페이지 별 사항 --> <!-- SEO -->
     <link rel="canonical" href="https://allmoney.co.kr">
     <META name="Subject" content="부동산 중개수수료 계산기">
     <META name="Title" content="얼마니&#63; 부동산 중개수수료 계산기">
@@ -27,7 +35,7 @@
     <META name="Location" content="KR">
     <META name="Distribution" content="MH">
     <META name="Copyright" content="MH">
-    <!-- Open Graph -->
+    <!-- 페이지 별 사항 --> <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="얼마니&#63; 부동산 중개수수료 계산기">
     <meta property="og:description" content="공인중개사 수수료를 계산하여 이사 예산을 계획하세요.">
@@ -38,7 +46,7 @@
     <meta name="twitter:description" content="공인중개사 수수료를 계산하여 이사 예산을 계획하세요.">
     <meta name="twitter:image" content="https://allmoney.co.kr/img/share.jpg">
     <meta name="twitter:domain" content="https://allmoney.co.kr">
-    <!-- 모바일 앱 링크 -->
+    <!-- 페이지 별 사항 --> <!-- 모바일 앱 링크 -->
     <meta property="al:ios:url" content="https://itunes.apple.com/kr/app//id1455056642?mt=8">
     <meta property="al:ios:app_store_id" content="1455056642">
     <meta property="al:ios:app_name" content="얼마니&#63; 부동산 중개수수료 계산기">
@@ -46,12 +54,7 @@
     <meta property="al:android:app_name" content="얼마니&#63; 부동산 중개수수료 계산기">
     <meta property="al:android:package" content="kr.co.allmoney">
     <meta property="al:web:url" content="https://allmoney.co.kr/">
-    <!-- 공통 사항 --> <!-- IP 주소 확인 : jsgetip.appspot.com -->
-    <script type="text/javascript" src="http://jsgetip.appspot.com"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/common.css">
-    <!-- 페이지 별 사항 -->
+    <!-- 페이지 별 사항 --> <!-- 사이트 이름 -->
     <title>얼마니&#63; 부동산 중개수수료 계산기</title>
     <!-- 페이지 별 사항 --> <!-- 임포트 파일 -->
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -68,16 +71,8 @@
 </section>
 <!-- 위치 설정을 위한 섹션 -->
 <section class="start_point">&nbsp;</section>
-<!-- 항목 선택 섹션 -->
-<section id="choice_1_section" class="subMenu-section">
-    <input type="button" id="forever" class="font-middle font-blue background-white subMenu-result-btn" value="매매">
-    <input type="button" id="year" class="font-middle font-blue background-white subMenu-result-btn" value="전세">
-    <input type="button" id="month" class="font-middle font-blue background-white subMenu-result-btn" value="월세">
-    <p id="information" class="font-middle font-white">항목을 선택하면 계산이 시작됩니다</p>
-</section>
 <!-- 유형 선택 섹션 -->
-<section id="choice_2_section" class="subMenu-section">
-<p class="font-large font-white">유형을 선택하세요</p>
+<section id="choice_1_section" class="subMenu-section">
     <input type="button" id="house" class="font-middle font-blue background-white subMenu-result-btn" value="주택 / 아파트 / 빌라">
     <input type="button" id="work" class="font-middle font-blue background-white subMenu-result-btn" value="토지 / 상가 / 업무용오피스텔">
     <input type="button" id="officetel" class="font-middle font-blue background-white subMenu-result-btn" value="주거용오피스텔">
@@ -85,8 +80,15 @@
         주거용오피스텔이란?<br>전용면적 85m<sup>2</sup> 이하, 상하수도, 입식부엌, 전용수세식화장실, 목욕시설을 갖춘 오피스텔을 말합니다.
     </p>
 </section>
+<!-- 항목 선택 섹션 -->
+<section id="choice_2_section" class="subMenu-section">
+    <p class="font-large font-white">계산방식을 선택하세요</p>
+    <input type="button" id="forever" class="font-middle font-blue background-white subMenu-result-btn" value="매매">
+    <input type="button" id="year" class="font-middle font-blue background-white subMenu-result-btn" value="전세">
+    <input type="button" id="month" class="font-middle font-blue background-white subMenu-result-btn" value="월세">
+</section>
 <!-- 1. 주거 매매 계산 섹션 -->
-<section id="house_forever_calcuator" class="subMenu-section">
+<section id="house_forever_calculator" class="subMenu-section">
     <p class="font-large font-white">매매 거래금을 입력하세요</p>
     <span class="input-area">
         <input type="tel" pattern="\d*" id="house_forever_money" class="font-large font-black input-box" placeholder="거래금">
@@ -113,7 +115,7 @@
     </div>
     <input type="button" id="house_forever_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
     <p id="house_forever_info" class="info-calculator">
-        <span class="font-large font-white">매매 주택/아파트/빌라</span><br>
+        <span class="font-large font-white">주택/아파트/빌라 매매</span><br>
         <span class="font-middle font-white">
             ■ 5천만원 미만 0.6%<br>
             -> 한도액 25만원<br>
@@ -129,7 +131,7 @@
     </p>
 </section>
 <!-- 2. 주거 전세 계산 섹션 -->
-<section id="house_year_calcuator" class="subMenu-section">
+<section id="house_year_calculator" class="subMenu-section">
     <p class="font-large font-white">전세 보증금을 입력하세요</p>
     <span class="input-area">
         <input type="tel" pattern="\d*" id="house_year_money" class="font-large font-black input-box" placeholder="보증금">
@@ -156,7 +158,7 @@
     </div>
     <input type="button" id="house_year_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
     <p id="house_year_info" class="info-calculator">
-        <span class="font-large font-white">전세 주택/아파트/빌라</span><br>
+        <span class="font-large font-white">주택/아파트/빌라 전세</span><br>
         <span class="font-middle font-white">
             ■ 5천만원 미만 0.5%<br>
             -> 한도액 20만원<br>
@@ -170,7 +172,7 @@
     </p>
 </section>
 <!-- 3. 주거 월세 계산 섹션 -->
-<section id="house_month_calcuator" class="subMenu-section">
+<section id="house_month_calculator" class="subMenu-section">
     <p class="font-large font-white">보증금과 월세를 입력하세요</p>
     <!-- 월세 입력 추가 id="house_month_rent_money" -->
     <span class="input-area">
@@ -202,7 +204,7 @@
     </div>
     <input type="button" id="house_month_info_btn" class="font-middle font-blue background-white subMenu-result-btn" value="계산식이 궁금해요">
     <p id="house_month_info" class="info-calculator">
-        <span class="font-large font-white">월세 주택/아파트/빌라</span><br>
+        <span class="font-large font-white">주택/아파트/빌라 월세</span><br>
         <span class="font-middle font-white">
             = 보증금 + (월세 * 100)<br>
             ■ 5천만원 미만 0.5%<br>
@@ -219,7 +221,7 @@
     </p>
 </section>
 <!-- 4. 상가 매매 계산 섹션 -->
-<section id="work_forever_calcuator" class="subMenu-section">
+<section id="work_forever_calculator" class="subMenu-section">
     <p class="font-large font-white">매매 거래금을 입력하세요</p>
     <span class="input-area">
         <input type="tel" pattern="\d*" id="work_forever_money" class="font-large font-black input-box" placeholder="거래금">
@@ -258,7 +260,7 @@
     </p>
 </section>
 <!-- 5. 상가 전세 계산 섹션 -->
-<section id="work_year_calcuator" class="subMenu-section">
+<section id="work_year_calculator" class="subMenu-section">
     <p class="font-large font-white">전세 보증금을 입력하세요</p>
     <span class="input-area">
         <input type="tel" pattern="\d*" id="work_year_money" class="font-large font-black input-box" placeholder="보증금">
@@ -297,7 +299,7 @@
     </p>
 </section>
 <!-- 6. 상가 월세 계산 섹션 -->
-<section id="work_month_calcuator" class="subMenu-section">
+<section id="work_month_calculator" class="subMenu-section">
     <p class="font-large font-white">보증금과 월세를 입력하세요</p>
     <span class="input-area">
         <input type="tel" pattern="\d*" id="work_month_money" class="font-large font-black input-box" placeholder="보증금">
@@ -340,7 +342,7 @@
     </p>
 </section>
 <!-- 7. 주거용오피스텔 매매 계산 섹션 -->
-<section id="officetel_forever_calcuator" class="subMenu-section">
+<section id="officetel_forever_calculator" class="subMenu-section">
     <p class="font-large font-white">매매 거래금을 입력하세요</p>
     <span class="input-area">
         <input type="tel" pattern="\d*" id="officetel_forever_money" class="font-large font-black input-box" placeholder="거래금">
@@ -379,7 +381,7 @@
     </p>
 </section>
 <!-- 8. 주거용오피스텔 전세 계산 섹션 -->
-<section id="officetel_year_calcuator" class="subMenu-section">
+<section id="officetel_year_calculator" class="subMenu-section">
     <p class="font-large font-white">전세 보증금을 입력하세요</p>
     <span class="input-area">
         <input type="tel" pattern="\d*" id="officetel_year_money" class="font-large font-black input-box" placeholder="보증금">
@@ -418,7 +420,7 @@
     </p>
 </section>
 <!-- 9. 주거용오피스텔 월세 계산 섹션 -->
-<section id="officetel_month_calcuator" class="subMenu-section">
+<section id="officetel_month_calculator" class="subMenu-section">
     <p class="font-large font-white">보증금과 월세를 입력하세요</p>
     <span class="input-area">
         <input type="tel" pattern="\d*" id="officetel_month_money" class="font-large font-black input-box" placeholder="보증금">
@@ -459,10 +461,6 @@
             </span>
         </span>
     </p>
-</section>
-<!-- 계산기 초기화 버튼 -->
-<section id="bottom_section">
-    <input type="button" class="font-middle font-blue background-white bottom-btn" value="다시 시작" onClick="location.replace('index.html')">
 </section>
 <!-- 푸터 섹션 -->
 <section id="footer"></section>

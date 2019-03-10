@@ -1,91 +1,201 @@
-var choice_1_section = ""; // 계산기 항목 구분 (forever_매매/year_전세/month_월세)
-// 계산기 항목 선택
+var choice_1_section = ""; // 계산기 유형 구분 (house_주거/work_상가/officetel_주거용오피스텔)
+var choice_2_section = ""; // 계산기 항목 구분 (forever_매매/year_전세/month_월세)
+function reset(){
+    $('#house_forever_calculator, #house_year_calculator, #house_month_calculator, #work_forever_calculator, #work_year_calculator, #work_month_calculator, #officetel_forever_calculator, #officetel_year_calculator, #officetel_month_calculator').css('display', 'none');
+    $('#house_forever_info, #house_year_info, #house_month_info, #work_forever_info, #work_year_info, #work_month_info, #officetel_forever_info, #officetel_year_info, #officetel_month_info').css('display', 'none');
+}
+// choice1 유형 선택
+$(document).ready(function () {
+    // 주택/아파트/빌라 유형
+    $('#house').click(function () {
+        reset();
+        if (choice_1_section === "") {
+            $('#work, #officetel, #officetel_comment').css('display', 'none');
+            $('#choice_2_section').css('display', 'block');
+            $('#forever, #year, #month').css('display', 'block');
+            choice_1_section = "house";
+        } else {
+            $('#house, #work, #officetel, #officetel_comment').css('display', 'block');
+            $('#choice_2_section').css('display', 'none');
+            choice_1_section = "";
+            choice_2_section = "";
+        }
+    });
+    // 토지/상가/업무용오피스텔 유형
+    $('#work').click(function () {
+        reset();
+        if (choice_1_section === "") {
+            $('#house, #officetel, #officetel_comment').css('display', 'none');
+            $('#choice_2_section').css('display', 'block');
+            $('#forever, #year, #month').css('display', 'block');
+            choice_1_section = "work";
+        } else {
+            $('#house, #work, #officetel, #officetel_comment').css('display', 'block');
+            $('#choice_2_section').css('display', 'none');
+            choice_1_section = "";
+            choice_2_section = "";
+        }
+    });
+    // 주거용오피스텔 유형
+    $('#officetel').click(function () {
+        reset();
+        if (choice_1_section === "") {
+            $('#house, #work').css('display', 'none');
+            $('#choice_2_section').css('display', 'block');
+            $('#forever, #year, #month').css('display', 'block');
+            choice_1_section = "officetel";
+        } else {
+            $('#house, #work, #officetel, #officetel_comment').css('display', 'block');
+            $('#choice_2_section').css('display', 'none');
+            choice_1_section = "";
+            choice_2_section = "";
+        }
+    });
+});
+// choice2 계산기 항목 선택
 $(document).ready(function () {
     // 매매 계산기 선택
     $('#forever').click(function () {
-        choice_1_section = "forever";
-        $('#year, #month, #information').css('display', 'none');
-        $('#choice_2_section').css('display', 'block');
+        reset();
+        var temp = "off";
+        if (choice_2_section === "") {
+            $('#year, #month').css('display', 'none');
+            choice_2_section = "forever";
+            if (choice_1_section === "house") {
+                $('#house_forever_calculator').css('display', 'block');
+                $('#house_forever_info_btn').click(function () {
+                    if(temp === "off"){
+                        $('#house_forever_info').css('display', 'block');
+                        temp = "on";
+                    }else{
+                        $('#house_forever_info').css('display', 'none');
+                        temp = "off";
+                    }
+                });
+            } else if (choice_1_section === "work") {
+                $('#work_forever_calculator').css('display', 'block');
+                $('#work_forever_info_btn').click(function () {
+                    if(temp === "off"){
+                        $('#work_forever_info').css('display', 'block');
+                        temp = "on";
+                    }else{
+                        $('#work_forever_info').css('display', 'none');
+                        temp = "off";
+                    }
+                });
+            } else if (choice_1_section === "officetel") {
+                $('#officetel_forever_calculator').css('display', 'block');
+                $('#officetel_forever_info_btn').click(function () {
+                    if(temp === "off"){
+                        $('#officetel_forever_info').css('display', 'block');
+                        temp = "on";
+                    }else{
+                        $('#officetel_forever_info').css('display', 'none');
+                        temp = "off";
+                    }
+                });
+            } else {
+                alert("오류인 것 같습니다. 관리자에게 메일을 보내주시면 후딱 고칠께요.");
+            }
+        } else {
+            $('#forever, #year, #month').css('display', 'block');
+            choice_2_section = "";
+        }
     });
     // 전세 계산기 선택
     $('#year').click(function () {
-        choice_1_section = "year";
-        $('#forever, #month, #information').css('display', 'none');
-        $('#choice_2_section').css('display', 'block');
+        reset();
+        var temp = "off";
+        if (choice_2_section === "") {
+            $('#forever, #month').css('display', 'none');
+            choice_2_section = "year";
+            if (choice_1_section === "house") {
+                $('#house_year_calculator').css('display', 'block');
+                $('#house_year_info_btn').click(function () {
+                    if(temp === "off"){
+                        $('#house_year_info').css('display', 'block');
+                        temp = "on";
+                    }else{
+                        $('#house_year_info').css('display', 'none');
+                        temp = "off";
+                    }
+                });
+            } else if (choice_1_section === "work") {
+                $('#work_year_calculator').css('display', 'block');
+                $('#work_year_info_btn').click(function () {
+                    if(temp === "off"){
+                        $('#work_year_info').css('display', 'block');
+                        temp = "on";
+                    }else{
+                        $('#work_year_info').css('display', 'none');
+                        temp = "off";
+                    }
+                });
+            } else if (choice_1_section === "officetel") {
+                $('#officetel_year_calculator').css('display', 'block');
+                $('#officetel_year_info_btn').click(function () {
+                    if(temp === "off"){
+                        $('#officetel_year_info').css('display', 'block');
+                        temp = "on";
+                    }else{
+                        $('#officetel_year_info').css('display', 'none');
+                        temp = "off";
+                    }
+                });
+            } else {
+                alert("오류인 것 같습니다. 관리자에게 메일을 보내주시면 후딱 고칠께요.");
+            }
+        } else {
+            $('#forever, #year, #month').css('display', 'block');
+            choice_2_section = "";
+        }
     });
     // 월세 계산기 선택
     $('#month').click(function () {
-        choice_1_section = "month";
-        $('#year, #forever, #information').css('display', 'none');
-        $('#choice_2_section').css('display', 'block');
-    });
-});
-// 계산기 유형 선택
-$(document).ready(function () {
-    // 주택/아파트/빌라 계산기 유형
-    $('#house').click(function () {
-        $('#work, #officetel, #officetel_comment').css('display', 'none');
-        if (choice_1_section === "forever") {
-            $('#house_forever_calcuator').css('display', 'block');
-            $('#house_forever_info_btn').click(function () {
-                $('#house_forever_info').toggle();
-            });
-        } else if (choice_1_section === "year") {
-            $('#house_year_calcuator').css('display', 'block');
-            $('#house_year_info_btn').click(function () {
-                $('#house_year_info').toggle();
-            });
-        } else if (choice_1_section === "month") {
-            $('#house_month_calcuator').css('display', 'block');
-            $('#house_month_info_btn').click(function () {
-                $('#house_month_info').toggle();
-            });
+        reset();
+        var temp = "off";
+        if (choice_2_section === "") {
+            $('#forever, #year').css('display', 'none');
+            choice_2_section = "month";
+            if (choice_1_section === "house") {
+                $('#house_month_calculator').css('display', 'block');
+                $('#house_month_info_btn').click(function () {
+                    if(temp === "off"){
+                        $('#house_month_info').css('display', 'block');
+                        temp = "on";
+                    }else{
+                        $('#house_month_info').css('display', 'none');
+                        temp = "off";
+                    }
+                });
+            } else if (choice_1_section === "work") {
+                $('#work_month_calculator').css('display', 'block');
+                $('#work_month_info_btn').click(function () {
+                    if(temp === "off"){
+                        $('#work_month_info').css('display', 'block');
+                        temp = "on";
+                    }else{
+                        $('#work_month_info').css('display', 'none');
+                        temp = "off";
+                    }
+                });
+            } else if (choice_1_section === "officetel") {
+                $('#officetel_month_calculator').css('display', 'block');
+                $('#officetel_month_info_btn').click(function () {
+                    if(temp === "off"){
+                        $('#officetel_month_info').css('display', 'block');
+                        temp = "on";
+                    }else{
+                        $('#officetel_month_info').css('display', 'none');
+                        temp = "off";
+                    }
+                });
+            } else {
+                alert("오류인 것 같습니다. 관리자에게 메일을 보내주시면 후딱 고칠께요.");
+            }
         } else {
-            alert("오류인 것 같습니다. 관리자에게 메일을 보내주시면 후딱 고칠께요.");
-        }
-    });
-    // 토지/상가/업무용오피스텔 계산기 유형
-    $('#work').click(function () {
-        $('#house, #officetel, #officetel_comment').css('display', 'none');
-        if (choice_1_section === "forever") {
-            $('#work_forever_calcuator').css('display', 'block');
-            $('#work_forever_info_btn').click(function () {
-                $('#work_forever_info').toggle();
-            });
-        } else if (choice_1_section === "year") {
-            $('#work_year_calcuator').css('display', 'block');
-            $('#work_year_info_btn').click(function () {
-                $('#work_year_info').toggle();
-            });
-        } else if (choice_1_section === "month") {
-            $('#work_month_calcuator').css('display', 'block');
-            $('#work_month_info_btn').click(function () {
-                $('#work_month_info').toggle();
-            });
-        } else {
-            alert("오류인 것 같습니다. 관리자에게 메일을 보내주시면 후딱 고칠께요.");
-        }
-    });
-    // 주거용오피스텔 계산기 유형
-    $('#officetel').click(function () {
-        $('#work, #house').css('display', 'none');
-        if (choice_1_section === "forever") {
-            $('#officetel_forever_calcuator').css('display', 'block');
-            $('#officetel_forever_info_btn').click(function () {
-                $('#officetel_forever_info').toggle();
-            });
-        } else if (choice_1_section === "year") {
-            $('#officetel_year_calcuator').css('display', 'block');
-            $('#officetel_year_info_btn').click(function () {
-                $('#officetel_year_info').toggle();
-            });
-        } else if (choice_1_section === "month") {
-            $('#officetel_month_calcuator').css('display', 'block');
-            $('#officetel_month_info_btn').click(function () {
-                $('#officetel_month_info').toggle();
-            });
-        } else {
-            alert("오류인 것 같습니다. 관리자에게 메일을 보내주시면 후딱 고칠께요.");
+            $('#forever, #year, #month').css('display', 'block');
+            choice_2_section = "";
         }
     });
 });
@@ -119,11 +229,11 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({
-            url: realtor,
+            url: realtor_insert,
             type: 'POST',
             data: {
-                'item': '매매',
                 'type': '주택/아파트/빌라',
+                'item': '매매',
                 'money': $('#house_forever_money').val(),
                 'rent': '',
                 'device': device,
@@ -231,11 +341,11 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: realtor,
+            url: realtor_insert,
             type: 'POST',
             data: {
-                'item': '전세',
                 'type': '주택/아파트/빌라',
+                'item': '전세',
                 'money': $('#house_year_money').val(),
                 'rent': '',
                 'device': device,
@@ -346,11 +456,11 @@ $(document).ready(function () {
         }
         // 입력된 값 DB 전송
         $.ajax({            
-            url: realtor,
+            url: realtor_insert,
             type: 'POST',
             data: {
-                'item': '월세',
                 'type': '주택/아파트/빌라',
+                'item': '월세',
                 'money': $('#house_month_money').val(),
                 'rent': $('#house_month_rent_money').val(),
                 'device': device,
@@ -459,11 +569,11 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: realtor,
+            url: realtor_insert,
             type: 'POST',
             data: {
-                'item': '매매',
                 'type': '토지/상가/업무용오피스텔',
+                'item': '매매',
                 'money': $('#work_forever_money').val(),
                 'rent': '',
                 'device': device,
@@ -519,11 +629,11 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: realtor,
+            url: realtor_insert,
             type: 'POST',
             data: {
-                'item': '전세',
                 'type': '토지/상가/업무용오피스텔',
+                'item': '전세',
                 'money': $('#work_year_money').val(),
                 'rent': '',
                 'device': device,
@@ -590,11 +700,11 @@ $(document).ready(function () {
         }
         // 입력된 값 DB 전송
         $.ajax({            
-            url: realtor,
+            url: realtor_insert,
             type: 'POST',
             data: {
-                'item': '월세',
                 'type': '토지/상가/업무용오피스텔',
+                'item': '월세',
                 'money': $('#work_month_money').val(),
                 'rent': $('#work_month_rent_money').val(),
                 'device': device,
@@ -650,11 +760,11 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: realtor,
+            url: realtor_insert,
             type: 'POST',
             data: {
-                'item': '매매',
                 'type': '주거용오피스텔',
+                'item': '매매',
                 'money': $('#officetel_forever_money').val(),
                 'rent': '',
                 'device': device,
@@ -710,11 +820,11 @@ $(document).ready(function () {
         var result_total = ""; // 총합
         // 입력된 값 DB 전송
         $.ajax({            
-            url: realtor,
+            url: realtor_insert,
             type: 'POST',
             data: {
-                'item': '전세',
                 'type': '주거용오피스텔',
+                'item': '전세',
                 'money': $('#officetel_year_money').val(),
                 'rent': '',
                 'device': device,
@@ -781,11 +891,11 @@ $(document).ready(function () {
         }
         // 입력된 값 DB 전송
         $.ajax({            
-            url: realtor,
+            url: realtor_insert,
             type: 'POST',
             data: {
-                'item': '월세',
                 'type': '주거용오피스텔',
+                'item': '월세',
                 'money': $('#officetel_month_money').val(),
                 'rent': $('#officetel_month_rent_money').val(),
                 'device': device,
@@ -811,5 +921,39 @@ $(document).ready(function () {
         } else {
             alert('금액을 확인하세요');
         }
+    });
+});
+// 하단 버튼 영역
+$(document).ready(function () {
+    // 자동 실행 - 버튼 활성/비활성
+    $(function () {
+        $.ajax({
+            url: realtor_select,
+            type: 'POST',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data['live'] === 'Y') {
+                    $('#bottom_address').attr('href', data['address']);
+                    $('#bottom_section').css({
+                        'display': 'block',
+                        'background-color': data['bg-color']
+                    });
+                    if (data['img'] != null) {
+                        // 이미지 최적 사이즈 320*55 - 아이폰SE 반영
+                        // 이미지를 사용할 때는 배경색도 이미지와 맞춰주기를 권장합니다.
+                        $('#bottom_title').hide();
+                        $('#bottom_img').attr('src', data['img']).show();
+                    } else {
+                        $('#bottom_img').hide();
+                        $('#bottom_title').val(data['title']).css('color', data['font-color']).show();
+                    }
+                } else {
+                    $('#bottom_section').css('display', 'none');
+                }
+            },
+            error: function () {
+                console.log('실패 : 자동 실행 - 버튼 활성/비활성');
+            }
+        });
     });
 });

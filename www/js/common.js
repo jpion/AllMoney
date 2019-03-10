@@ -17,7 +17,8 @@ if ("geolocation" in navigator) {
     });
 }
 // API
-var realtor = 'https://allmoney.co.kr/php/realtor_insert.php'; // 부동산 중개수수료
+var realtor_insert = 'php/realtor_insert.php'; // 부동산 중개수수료
+var realtor_select = 'php/realtor_select.php'; // 부동산 중개수수료
 // 메뉴 버튼 제어
 $(document).ready(function () {
     // 헤더 부분 연결
