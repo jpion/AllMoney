@@ -933,6 +933,7 @@ $(document).ready(function () {
             dataType: 'JSON',
             success: function (data) {
                 if (data['live'] === 'Y') {
+                    $('#bottom_address').attr('href', data['address']);
                     $('#bottom_section').css({
                         'display': 'block',
                         'background-color': data['bg-color']
