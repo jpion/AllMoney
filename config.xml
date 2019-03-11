@@ -78,6 +78,10 @@
         <splash src="www/res/screen/ios/Default@2x~ipad~anyany.png" />
         <!-- 1278x2732 -->
         <splash src="www/res/screen/ios/Default@2x~ipad~comany.png" />
+        <!-- 1125x2436 -->
+        <splash src="www/res/screen/ios/Default-2436h.png" width="1125" height="2436" />
+        <!-- 2436x1125 -->
+        <splash src="www/res/screen/ios/Default-Landscape-2436h.png" width="2436" height="1125" />
     </platform>
     <!-- <platform name="wp8">
         <icon height="99" platform="wp8" src="www/res/icon/wp8/ApplicationIcon.png" width="99" />
