@@ -20,7 +20,7 @@
 .background-white { background-color: #F9FCFE; }
 .background-blue { background-color: #2B9AEC; }
 
-body { width: 100%; margin: auto; background-color: #2B9AEC; font-family: 'Do Hyeon'; }
+body { width: 100%; margin: auto; background-color: #2B9AEC; font-family: 'Do Hyeon'; padding-top: constant(safe-area-inset-top); /* iOS 11.0 */ padding-top: env(safe-area-inset-top); /* iOS 11.2 */ }
 input { -webkit-appearance: none; border-radius: 0; }
 input::placeholder { color: rgb(180, 180, 180); }
 textarea::placeholder { color: rgb(180, 180, 180); }
