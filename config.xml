@@ -12,6 +12,7 @@
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="cordova-plugin-geolocation" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" /> <!-- 필수 플러그인 : 링크를 작동하게 해줌 -->
+    <!-- edit-config 해당 플러그인을 사용하는 이유 명시 : 애플 심사에 문제가 되어 추가함 -->
     <edit-config target="cordova-plugin-geolocation" file="*-Info.plist" mode="overwrite">
         <string>Check the user's location to recommend to the user</string>
     </edit-config>
