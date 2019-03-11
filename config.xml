@@ -13,8 +13,8 @@
     <plugin name="cordova-plugin-geolocation" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" /> <!-- 필수 플러그인 : 링크를 작동하게 해줌 -->
     <!-- edit-config 해당 플러그인을 사용하는 이유 명시 : 애플 심사에 문제가 되어 추가함 -->
-    <edit-config target="cordova-plugin-geolocation" file="*-Info.plist" mode="overwrite">
-        <string>Check the user's location to recommend to the user</string>
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="overwrite">
+        <string>위치 정보는 공공의 데이터로 사용됩니다. 수집된 정보가 누구의 것인지는 알지 못하며, 당연히 여러분도 사용할 수 있도록 공개(공유)할 것임을 약속드립니다. 부동산 문제를 해결하는 것에 힘을 보태주세요.</string>
     </edit-config>
     <platform name="android">
         <preference name="android-minSdkVersion" value="14" />
