@@ -1,6 +1,8 @@
+var device = 'App'; // 디비 전송 시 기기 정보
 var choice_1_section = ""; // 계산기 유형 구분 (house_주거/work_상가/officetel_주거용오피스텔)
 var choice_2_section = ""; // 계산기 항목 구분 (forever_매매/year_전세/month_월세)
 function reset(){
+    $('#house_forever_money, #house_year_money, #house_month_money, #house_month_rent_money, #work_forever_money, #work_year_money, #work_month_money, #work_month_rent_money, #officetel_forever_money, #officetel_year_money, #officetel_month_money, #officetel_month_rent_money').val('');
     $('#house_forever_calculator, #house_year_calculator, #house_month_calculator, #work_forever_calculator, #work_year_calculator, #work_month_calculator, #officetel_forever_calculator, #officetel_year_calculator, #officetel_month_calculator').css('display', 'none');
     $('#house_forever_info, #house_year_info, #house_month_info, #work_forever_info, #work_year_info, #work_month_info, #officetel_forever_info, #officetel_year_info, #officetel_month_info').css('display', 'none');
 }
@@ -63,6 +65,7 @@ $(document).ready(function () {
             choice_2_section = "forever";
             if (choice_1_section === "house") {
                 $('#house_forever_calculator').css('display', 'block');
+                $('#house_forever_money').focus();
                 $('#house_forever_info_btn').click(function () {
                     if(temp === "off"){
                         $('#house_forever_info').css('display', 'block');
@@ -74,6 +77,7 @@ $(document).ready(function () {
                 });
             } else if (choice_1_section === "work") {
                 $('#work_forever_calculator').css('display', 'block');
+                $('#work_forever_money').focus();
                 $('#work_forever_info_btn').click(function () {
                     if(temp === "off"){
                         $('#work_forever_info').css('display', 'block');
@@ -85,6 +89,7 @@ $(document).ready(function () {
                 });
             } else if (choice_1_section === "officetel") {
                 $('#officetel_forever_calculator').css('display', 'block');
+                $('#officetel_forever_money').focus();
                 $('#officetel_forever_info_btn').click(function () {
                     if(temp === "off"){
                         $('#officetel_forever_info').css('display', 'block');
@@ -111,6 +116,7 @@ $(document).ready(function () {
             choice_2_section = "year";
             if (choice_1_section === "house") {
                 $('#house_year_calculator').css('display', 'block');
+                $('#house_year_money').focus();
                 $('#house_year_info_btn').click(function () {
                     if(temp === "off"){
                         $('#house_year_info').css('display', 'block');
@@ -122,6 +128,7 @@ $(document).ready(function () {
                 });
             } else if (choice_1_section === "work") {
                 $('#work_year_calculator').css('display', 'block');
+                $('#work_year_money').focus();
                 $('#work_year_info_btn').click(function () {
                     if(temp === "off"){
                         $('#work_year_info').css('display', 'block');
@@ -133,6 +140,7 @@ $(document).ready(function () {
                 });
             } else if (choice_1_section === "officetel") {
                 $('#officetel_year_calculator').css('display', 'block');
+                $('#officetel_year_money').focus();
                 $('#officetel_year_info_btn').click(function () {
                     if(temp === "off"){
                         $('#officetel_year_info').css('display', 'block');
@@ -159,6 +167,7 @@ $(document).ready(function () {
             choice_2_section = "month";
             if (choice_1_section === "house") {
                 $('#house_month_calculator').css('display', 'block');
+                $('#house_month_money').focus();
                 $('#house_month_info_btn').click(function () {
                     if(temp === "off"){
                         $('#house_month_info').css('display', 'block');
@@ -170,6 +179,7 @@ $(document).ready(function () {
                 });
             } else if (choice_1_section === "work") {
                 $('#work_month_calculator').css('display', 'block');
+                $('#work_month_money').focus();
                 $('#work_month_info_btn').click(function () {
                     if(temp === "off"){
                         $('#work_month_info').css('display', 'block');
@@ -181,6 +191,7 @@ $(document).ready(function () {
                 });
             } else if (choice_1_section === "officetel") {
                 $('#officetel_month_calculator').css('display', 'block');
+                $('#officetel_month_money').focus();
                 $('#officetel_month_info_btn').click(function () {
                     if(temp === "off"){
                         $('#officetel_month_info').css('display', 'block');
@@ -222,6 +233,9 @@ $(document).ready(function () {
         }
     });
     // 1. 주거 매매 계산기
+    $('#house_forever_money_reset').click(function(){
+        $('#house_forever_money').val('').focus();
+    });
     $('#house_forever_process').click(function () {
         var money = Number($('#house_forever_money').val().replace(/\,/g,'')); // 자리수 콤마 제거하고 숫자로 형 변환
         var result_fee = ""; // 수수료
@@ -236,10 +250,7 @@ $(document).ready(function () {
                 'item': '매매',
                 'money': $('#house_forever_money').val(),
                 'rent': '',
-                'device': device,
-                'ip': ip,
-                'latitude': latitude,
-                'longitude': longitude
+                'device': device
             }, 
             success: function(){
                 console.log('1. 주거 매매 계산기 DB 전송 성공');
@@ -334,6 +345,9 @@ $(document).ready(function () {
         }
     });
     // 2. 주거 전세 계산기
+    $('#house_year_money_reset').click(function(){
+        $('#house_year_money').val('').focus();
+    });
     $('#house_year_process').click(function () {
         var money = Number($('#house_year_money').val().replace(/\,/g,'')); // 자리수 콤마 제거하고 숫자로 형 변환
         var result_fee = ""; // 수수료
@@ -348,10 +362,7 @@ $(document).ready(function () {
                 'item': '전세',
                 'money': $('#house_year_money').val(),
                 'rent': '',
-                'device': device,
-                'ip': ip,
-                'latitude': latitude,
-                'longitude': longitude
+                'device': device
             }, 
             success: function(){
                 console.log('2. 주거 전세 계산기 DB 전송 성공');
@@ -439,6 +450,10 @@ $(document).ready(function () {
     });
     // 3. 주거 월세 계산기
     // 거래금이 5천만원 미만일 때와 이상일 때의 계산 식이 다름
+    $('#house_month_money_reset').click(function(){
+        $('#house_month_money, #house_month_rent_money').val('');
+        $('#house_month_money').focus();
+    });
     $('#house_month_process').click(function () {
         var money = ""; // 최종 거래금이 담길 변수
         var result_fee = ""; // 수수료
@@ -463,10 +478,7 @@ $(document).ready(function () {
                 'item': '월세',
                 'money': $('#house_month_money').val(),
                 'rent': $('#house_month_rent_money').val(),
-                'device': device,
-                'ip': ip,
-                'latitude': latitude,
-                'longitude': longitude
+                'device': device
             }, 
             success: function(){
                 console.log('3. 주거 월세 계산기 DB 전송 성공');
@@ -562,6 +574,9 @@ $(document).ready(function () {
     });
     // 4. 상가 매매 계산기
     // 매매 거래금의 0.9%
+    $('#work_forever_money_reset').click(function(){
+        $('#work_forever_money').val('').focus();
+    });
     $('#work_forever_process').click(function () {
         var money = Number($('#work_forever_money').val().replace(/\,/g,'')); // 자리수 콤마 제거하고 숫자로 형 변환
         var result_fee = ""; // 수수료
@@ -576,10 +591,7 @@ $(document).ready(function () {
                 'item': '매매',
                 'money': $('#work_forever_money').val(),
                 'rent': '',
-                'device': device,
-                'ip': ip,
-                'latitude': latitude,
-                'longitude': longitude
+                'device': device
             }, 
             success: function(){
                 console.log('4. 상가 매매 계산기 DB 전송 성공');
@@ -622,6 +634,9 @@ $(document).ready(function () {
     });
     // 5. 상가 전세 계산기
     // 전세 보증금의 0.9%
+    $('#work_year_money_reset').click(function(){
+        $('#work_year_money').val('').focus();
+    });
     $('#work_year_process').click(function () {
         var money = Number($('#work_year_money').val().replace(/\,/g,'')); // 자리수 콤마 제거하고 숫자로 형 변환
         var result_fee = ""; // 수수료
@@ -636,10 +651,7 @@ $(document).ready(function () {
                 'item': '전세',
                 'money': $('#work_year_money').val(),
                 'rent': '',
-                'device': device,
-                'ip': ip,
-                'latitude': latitude,
-                'longitude': longitude
+                'device': device
             }, 
             success: function(){
                 console.log('5. 상가 전세 계산기 DB 전송 성공');
@@ -683,6 +695,10 @@ $(document).ready(function () {
     // 6. 상가 월세 계산기
     // 거래금의 0.9%
     // 거래금이 5천만원 미만일 때와 이상일 때의 계산 식이 다름
+    $('#work_month_money_reset').click(function(){
+        $('#work_month_money, #work_month_rent_money').val('');
+        $('#work_month_money').focus();
+    });
     $('#work_month_process').click(function () {
         var money = ""; // 최종 거래금이 담길 변수
         var result_fee = ""; // 수수료
@@ -707,10 +723,7 @@ $(document).ready(function () {
                 'item': '월세',
                 'money': $('#work_month_money').val(),
                 'rent': $('#work_month_rent_money').val(),
-                'device': device,
-                'ip': ip,
-                'latitude': latitude,
-                'longitude': longitude
+                'device': device
             }, 
             success: function(){
                 console.log('6. 상가 월세 계산기 DB 전송 성공');
@@ -753,6 +766,9 @@ $(document).ready(function () {
     });
     // 7. 주거용오피스텔 매매 계산기
     // 매매 거래금의 0.5%
+    $('#officetel_forever_money_reset').click(function(){
+        $('#officetel_forever_money').val('').focus();
+    });
     $('#officetel_forever_process').click(function () {
         var money = Number($('#officetel_forever_money').val().replace(/\,/g,'')); // 자리수 콤마 제거하고 숫자로 형 변환
         var result_fee = ""; // 수수료
@@ -767,10 +783,7 @@ $(document).ready(function () {
                 'item': '매매',
                 'money': $('#officetel_forever_money').val(),
                 'rent': '',
-                'device': device,
-                'ip': ip,
-                'latitude': latitude,
-                'longitude': longitude
+                'device': device
             }, 
             success: function(){
                 console.log('7. 주거용오피스텔 매매 계산기 DB 전송 성공');
@@ -813,6 +826,9 @@ $(document).ready(function () {
     });
     // 8. 주거용오피스텔 전세 계산기
     // 전세 보증금의 0.4%
+    $('#officetel_year_money_reset').click(function(){
+        $('#officetel_year_money').val('').focus();
+    });
     $('#officetel_year_process').click(function () {
         var money = Number($('#officetel_year_money').val().replace(/\,/g,'')); // 자리수 콤마 제거하고 숫자로 형 변환
         var result_fee = ""; // 수수료
@@ -827,10 +843,7 @@ $(document).ready(function () {
                 'item': '전세',
                 'money': $('#officetel_year_money').val(),
                 'rent': '',
-                'device': device,
-                'ip': ip,
-                'latitude': latitude,
-                'longitude': longitude
+                'device': device
             }, 
             success: function(){
                 console.log('8. 주거용오피스텔 전세 계산기 DB 전송 성공');
@@ -874,6 +887,10 @@ $(document).ready(function () {
     // 9. 주거용오피스텔 월세 계산기
     // 거래금의 0.4%
     // 거래금이 5천만원 미만일 때와 이상일 때의 계산 식이 다름
+    $('#officetel_month_money_reset').click(function(){
+        $('#officetel_month_money, #officetel_month_rent_money').val('');
+        $('#officetel_month_money').focus();
+    });
     $('#officetel_month_process').click(function () {
         var money = ""; // 최종 거래금이 담길 변수
         var result_fee = ""; // 수수료
@@ -898,10 +915,7 @@ $(document).ready(function () {
                 'item': '월세',
                 'money': $('#officetel_month_money').val(),
                 'rent': $('#officetel_month_rent_money').val(),
-                'device': device,
-                'ip': ip,
-                'latitude': latitude,
-                'longitude': longitude
+                'device': device
             }, 
             success: function(){
                 console.log('9. 주거용오피스텔 월세 계산기 DB 전송 성공');

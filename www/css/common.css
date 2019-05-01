@@ -43,6 +43,8 @@ textarea::placeholder { color: rgb(180, 180, 180); }
 .input-area { clear: both; display: block; }
 .input-box { clear: both; width: 254px; height: 55px; text-align: right; border: none; padding: 0px 10px; margin: auto; margin-bottom: 10px; }
 .subMenu-result-btn { clear: both; display: block; width: 300px; height: 55px; margin: auto; border: none; margin-bottom: 10px; cursor: pointer; }
+.subMenu-reset-btn { clear: both; display: inline; width: 100px; height: 55px; margin: auto; border: none; margin-bottom: 10px; cursor: pointer; }
+.subMenu-calc-btn { clear: both; display: inline; width: 197px; height: 55px; margin: auto; border: none; margin-bottom: 10px; cursor: pointer; }
 .description-text { clear: both; width: 300px; margin: auto; margin-bottom: 30px; text-align: justify; }
 .result { clear: both; width: 300px; margin: auto; }
 .result-text { clear: both; float: left; }

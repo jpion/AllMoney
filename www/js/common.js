@@ -1,24 +1,6 @@
-// 디바이스 정보 확인
-var device = '';
-if (navigator.userAgent.match(/Android|Mobile|iP(hone|od|ad)|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/)) {
-    device = 'mobile';
-} else {
-    device = 'PC';
-}
-// IP 주소 확인
-var ip = ip();
-// 위도, 경도 확인
-var latitude = "";
-var longitude = "";
-if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-        latitude = position.coords.latitude;
-        longitude = position.coords.longitude;
-    });
-}
 // API
-var realtor_insert = 'https://allmoney.co.kr/php/realtor_insert.php'; // 부동산 중개수수료
-var realtor_select = 'https://allmoney.co.kr/php/realtor_select.php'; // 부동산 중개수수료
+var realtor_insert = 'http://allmoney.co.kr/php/realtor_insert.php'; // 부동산 중개수수료
+var realtor_select = 'http://allmoney.co.kr/php/realtor_select.php'; // 부동산 중개수수료
 // 메뉴 버튼 제어
 $(document).ready(function () {
     // 헤더 부분 연결
