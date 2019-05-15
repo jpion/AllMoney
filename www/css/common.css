@@ -55,4 +55,4 @@ textarea::placeholder { color: rgb(180, 180, 180); }
 .list_none { list-style: none; }
 .list_number { list-style: decimal; }
 .store_icon { width: 50px; }
-.ad { background-color: #F9FCFE; width: 280px; margin: auto; margin-top: 30px; margin-bottom: 50px; padding: 10px; border-radius: 10px; }
+.ad { background-color: #F9FCFE; width: 280px; margin: auto; margin-bottom: 100px; padding: 10px; border-radius: 10px; }
